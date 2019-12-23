@@ -1,3 +1,6 @@
 .env/
 .envrc
 *.egg-info/
+cdk.out/
+.vscode/
+**/__pycache__/
