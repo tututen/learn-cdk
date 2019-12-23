@@ -1,4 +1,5 @@
 from aws_cdk import core
+from aws_cdk.core import Duration
 from aws_cdk import aws_lambda as _lambda
 
 
@@ -12,6 +13,7 @@ class LearnCdkStack(core.Stack):
             "demo_func",
             runtime=_lambda.Runtime.PYTHON_3_7,
             handler="demo_func.handler",
+            timeout=Duration.minutes(1),  # pylint: disable=E1120
             code=_lambda.Code.asset("lambda_code/demo_func"),  # pylint: disable=E1120
         )
 
